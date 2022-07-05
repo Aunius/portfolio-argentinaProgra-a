@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { CabeceraComponent } from './components/cabecera/cabecera.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { PoryectosComponent } from './components/poryectos/poryectos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabeceraComponent,
-    AcercaDeComponent
+    AcercaDeComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    PoryectosComponent
   ],
   imports: [
     BrowserModule,
