@@ -9,7 +9,9 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
-import { PoryectosComponent } from './components/poryectos/poryectos.component';
+import { ProyectosComponent } from './components/proyectos/proyectos/proyectos.component';
+import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
+import { MenusComponent } from './components/menus/menus.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PoryectosComponent } from './components/poryectos/poryectos.component';
     AcercaDeComponent,
     ExperienciaComponent,
     EducacionComponent,
-    PoryectosComponent
+    ProyectosComponent,
+    TecnologiasComponent,
+    MenusComponent
   ],
   imports: [
     BrowserModule,
