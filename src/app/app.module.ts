@@ -22,7 +22,7 @@ import { MenusComponent } from './components/menus/menus.component';
     EducacionComponent,
     ProyectosComponent,
     TecnologiasComponent,
-    MenusComponent
+    MenusComponent,
   ],
   imports: [
     BrowserModule,
