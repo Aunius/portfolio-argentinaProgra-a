@@ -1,0 +1,118 @@
+<!--<div class="container py-4">
+    <div class="card">
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+        <div class="mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+            <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="emailAddress">Email Address</label>
+            <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
+            <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+            <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+            <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+        </div>
+    
+         Form submissions success message
+        <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">Form submission successful!</div>
+        </div>
+
+        <div class="d-none" id="submitErrorMessage">
+            <div class="text-center text-danger mb-3">Error sending message!</div>
+        </div> 
+
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+        </div>
+        </form>
+    </div>
+  </div>-->
+
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card patron-tarjeta" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5 text-light">Registro de planta</h2>
+
+            <form>
+
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Dominio</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                    <option selected>Reino</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                    <option selected>Filo</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                    <option selected>Clase</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                    <option selected>Orden</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                    <option selected>Familia</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+                    <option selected>Genero</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label text-light">Especie</label>
+                        <input type="text" class="form-control" id="" placeholder="Ingresa el Nombre Vulgar de la planta" required>
+                    </div>
+                </select>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label text-light">Nombre Vulgar</label>
+                    <input type="text" class="form-control" id="" placeholder="Ingresa el Nombre Vulgar de la planta" required>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label text-light">Descripcion</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresa una descripcion de la especie..."></textarea>
+                </div>
+                <div class="row">
+                    <div class="justify-content-center">
+                        <label for="formFileMultiple" class="form-label text-light">Subir fotos</label>
+                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+            </form>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-5 mt-5">
+                <button type="submit" class="btn btn-info">Enviar</button>
+                <button type="reset" class="btn btn-warning">Limpiar</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

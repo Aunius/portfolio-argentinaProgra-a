@@ -12,6 +12,8 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { ProyectosComponent } from './components/proyectos/proyectos/proyectos.component';
 import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 import { MenusComponent } from './components/menus/menus.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { MenusComponent } from './components/menus/menus.component';
     ProyectosComponent,
     TecnologiasComponent,
     MenusComponent,
+    ContactoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
