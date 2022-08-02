@@ -15,6 +15,8 @@ import { MenusComponent } from './components/menus/menus.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     MenusComponent,
     ContactoComponent,
     FooterComponent,
+    InicioComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
