@@ -17,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
+import { interceptorProvider } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { LoginComponent } from './components/login/login.component';
     FontAwesomeModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
