@@ -7,17 +7,16 @@ package com.portfolio.portfolioargprog.DTO;
 import javax.validation.constraints.NotBlank;
 
 
-public class DtoExperiencia {
-    
+public class DtoEducacion {
     @NotBlank
     private String nombreE;
     @NotBlank
     private String descripcionE;
 
-    public DtoExperiencia() {
+    public DtoEducacion() {
     }
 
-    public DtoExperiencia(String nombreE, String descripcionE) {
+    public DtoEducacion(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
@@ -39,5 +38,5 @@ public class DtoExperiencia {
     }
     
     
+    
 }
-
