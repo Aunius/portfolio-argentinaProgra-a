@@ -1,3 +1,4 @@
+/*
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
@@ -28,4 +29,4 @@ export class InterceptorService {
 export const interceptorProvider = [(
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
-    multi: true)];
+    multi: true)];*/

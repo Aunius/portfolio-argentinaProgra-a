@@ -4,6 +4,7 @@
  */
 package com.portfolio.portfolioargprog.Controller;
 
+import com.portfolio.portfolioargprog.DTO.DtoExperiencia;
 import com.portfolio.portfolioargprog.Entity.Experiencia;
 import com.portfolio.portfolioargprog.Security.Controller.Mensaje;
 import com.portfolio.portfolioargprog.Service.SExperiencia;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("explab")
+@RequestMapping("/explab")
 @CrossOrigin("http//localhost:4200")
 public class CExperiencia {
     @Autowired  
@@ -35,8 +36,8 @@ public class CExperiencia {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
-      @GetMapping("/detalles{id}")
-    public ResponseEntity<?> getById(@PathVariable("id")int id){
+      @GetMapping("/detalles/{id}")
+    public ResponseEntity<Experiencia> getById(@PathVariable("id")int id){
         if(!sExperiencia.existsById(id)){
             return new ResponseEntity(new Mensaje("no existe la id"), HttpStatus.BAD_REQUEST);
         }
@@ -45,7 +46,7 @@ public class CExperiencia {
     }
     
     @PostMapping("/crear")
-    public ResponseEntity<?> create(@RequestBody dtoExperiencia dtoExp){
+    public ResponseEntity<?> create(@RequestBody DtoExperiencia dtoexp){
         if(StringUtils.isBlank(dtoexp.getNombreE())){
             return new ResponseEntity(new Mensaje("El nombre es requerido"),HttpStatus.BAD_REQUEST);}
         if(sExperiencia.existsByNombreE(dtoexp.getNombreE())){
@@ -57,10 +58,10 @@ public class CExperiencia {
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoExperiencia dtoexp){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoExperiencia dtoexp){
         if(!sExperiencia.existsById(id)){
             return new ResponseEntity(new Mensaje("El id no existe"), HttpStatus.BAD_REQUEST);}
-        if(sExperiencia.existsByNombreE(dtoexp.getNombreE()) && sExperiencia.existsByNombreE(dtoexp.getNombreE()).get().getId() !=id){
+        if(sExperiencia.existsByNombreE(dtoexp.getNombreE()) && sExperiencia.getByNombreE(dtoexp.getNombreE()).get().getId() !=id){
             return new ResponseEntity(new Mensaje("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);}
         if(StringUtils.isBlank(dtoexp.getNombreE())){
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);}
