@@ -4,6 +4,7 @@
  */
 package com.portfolio.portfolioargprog.Controller;
 
+import com.portfolio.portfolioargprog.DTO.DtoEducacion;
 import com.portfolio.portfolioargprog.Entity.Educacion;
 import com.portfolio.portfolioargprog.Security.Controller.Mensaje;
 import com.portfolio.portfolioargprog.Service.Seducacion;
@@ -53,7 +54,7 @@ public class CEducacion {
     }
     
     @PostMapping("/crear")
-    public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
+    public ResponseEntity<?> create(@RequestBody DtoEducacion dtoeducacion){
         if(StringUtils.isBlank(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("El nombre es requerido"),HttpStatus.BAD_REQUEST);
         }
@@ -67,7 +68,7 @@ public class CEducacion {
     
         
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoeducacion){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoEducacion dtoeducacion){
         if(!sEducacion.existsById(id)){
             return new ResponseEntity(new Mensaje("El id no existe"), HttpStatus.NOT_FOUND);}
         if(sEducacion.existsByNombreE(dtoeducacion.getNombreE()) && sEducacion.existsByNombreE(dtoeducacion.getNombreE()).get().getId() !=id){
