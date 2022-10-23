@@ -6,6 +6,7 @@ package com.portfolio.portfolioargprog.Controller;
 
 import com.portfolio.portfolioargprog.Entity.Educacion;
 import com.portfolio.portfolioargprog.Security.Controller.Mensaje;
+import com.portfolio.portfolioargprog.Service.Seducacion;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
