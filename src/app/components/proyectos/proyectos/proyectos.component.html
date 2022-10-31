@@ -2,25 +2,25 @@
   <div class="row">
     <h1 class="display-1 fs-bold lh-lg text-dark">Proyectos</h1>
   </div>
-</div>
-<div class="row p-5 pb-5" style="background-color:#faf8bf;">
-
-  <div *ngFor="let item of valores" class="col-md-3">
-    <div class="card">
-      <img src="{{item.url_imagen}}" class="card-img-top" alt="Fissure in Sandstone"/>
-      <div class="card-body">
-        <h5 class="card-title">{{item.titulo}}</h5>
-        <p class="card-text">{{item.subtitulo}}</p>
-        <div class="row justify-content-center">
-          <div class="col-md-2">
-            <a href="{{item.url}}" class="btn btn-primary">Ver</a>
+  <div class="row p-5 pb-5" style="background-color:#faf8bf;">
+  
+    <div *ngFor="let item of valores" class="col-md-3">
+      <div class="card">
+        <img src="{{item.url_imagen}}" class="card-img-top" alt="Fissure in Sandstone"/>
+        <div class="card-body">
+          <h5 class="card-title">{{item.titulo}}</h5>
+          <p class="card-text">{{item.subtitulo}}</p>
+          <div class="row justify-content-center">
+            <div class="col-md-2">
+              <a href="{{item.url}}" class="btn btn-primary">Ver</a>
+            </div>
+            <!-- <div class="col-md-2">
+              <a href="{{item.url}}" class="btn btn-primary">Ver</a>
+            </div> -->
           </div>
-          <!-- <div class="col-md-2">
-            <a href="{{item.url}}" class="btn btn-primary">Ver</a>
-          </div> -->
         </div>
       </div>
     </div>
+  
   </div>
-
 </div>
