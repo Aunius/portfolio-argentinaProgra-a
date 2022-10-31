@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class InicioService {
 
-  url_base = 'http://localhost:8080/home/'
+  url_base = 'https://backend-portfolioargentinaprog.herokuapp.com/home/'
 
   constructor(private httpClient: HttpClient) { }
 

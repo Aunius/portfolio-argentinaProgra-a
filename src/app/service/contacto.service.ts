@@ -8,7 +8,7 @@ import { Contacto } from '../model/contacto';
 })
 export class ContactoService {
 
-  url_base = 'http://localhost:8080/contacto'
+  url_base = 'https://backend-portfolioargentinaprog.herokuapp.com/contacto'
 
   constructor(private httpClient: HttpClient) { }
 
