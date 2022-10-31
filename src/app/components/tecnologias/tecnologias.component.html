@@ -5,7 +5,7 @@
             <div class="card mb-5" style="background-color:#faf8bf;">
                 <div class="row pt-5">
                     <div *ngFor="let item of hard" class="col-6 mb-4">
-                        <h3>{{item.texto}} <button *ngIf="IsLogged" type="button" class="btn btn-danger me-5" data-bs-toggle="modal">Eliminar</button></h3>
+                        <h3>{{item.texto}} <button (click)="quitar(item.id)" *ngIf="IsLogged" type="button" class="btn btn-danger me-5">Eliminar</button></h3>
                         <div class="progress mb-5">
                             <div class="progress-bar" role="progressbar" style="width: {{item.valor}}%;" aria-valuemin="0" aria-valuemax="100">{{item.valor}}%</div>
                         </div>
@@ -24,7 +24,7 @@
             <div class="card mb-5" style="background-color:#faf8bf;">
                 <div class="row pt-5">
                     <div *ngFor="let item of soft" class="col-6 mb-4">
-                        <h3>{{item.texto}} <button *ngIf="IsLogged" type="button" class="btn btn-danger me-5" data-bs-toggle="modal">Eliminar</button></h3>
+                        <h3>{{item.texto}} <button (click)="quitar(item.id)" *ngIf="IsLogged" type="button" class="btn btn-danger me-5">Eliminar</button></h3>
                         <div class="progress mb-5">
                             <div class="progress-bar" role="progressbar" style="width: {{item.valor}}%;" aria-valuemin="0" aria-valuemax="100">{{item.valor}}%</div>
                         </div>

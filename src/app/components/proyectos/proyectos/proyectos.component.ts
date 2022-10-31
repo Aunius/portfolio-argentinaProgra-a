@@ -14,6 +14,12 @@ export class ProyectosComponent implements OnInit {
   valores: Proyecto[] = [new Proyecto(-1,"No se ha podido cargar la información", "No se ha podido cargar la información","","")];
   IsLogged!: Boolean;
 
+  titulo!:string
+  subtitulo!:string
+  url_imagen!:string
+  url!:string
+  errorMensaje!:string
+
   constructor(public inicioService: InicioService, public peticionesService: PeticionesService, public tokenService:TokenService) { }
 
   ngOnInit(): void {
@@ -24,5 +30,32 @@ export class ProyectosComponent implements OnInit {
           this.valores.push(new Proyecto(element.id, element.titulo, element.subtitulo, element.url, element.url_imagen));
       });
     })
+    this.errorMensaje='';
+    this.titulo='';
+    this.subtitulo='';
+    this.url_imagen='';
+    this.url='';
   }
+
+  agregar(): void{
+    this.peticionesService.nuevoProyecto(new Proyecto(0,this.titulo,this.subtitulo,this.url_imagen,this.url)).subscribe(res => {
+        if(res){
+          this.ngOnInit();
+          (<HTMLInputElement>document.getElementById("exampleModal6_cerrar")).click();
+        }
+      },
+      err => {
+        this.errorMensaje = 'Ha ocurrido un error, reintente nuevamente mas tarde';
+      });
+  }
+
+  quitar(id:any): void{
+    this.peticionesService.eliminarProyecto(id).subscribe(res => {
+      this.ngOnInit();
+      },
+      err => {
+        this.errorMensaje = 'Ha ocurrido un error, reintente nuevamente mas tarde';
+      });
+  }
+
 }

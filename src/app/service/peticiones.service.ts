@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { AcercaDe } from '../model/acerca_de';
 import { Cabecera } from '../model/cabecera';
 import { EducacionExperiencia } from '../model/educacion_experiencia';
+import { Proyecto } from '../model/proyecto';
 import { Skill } from '../model/skill';
 import { TokenService } from './token.service';
 
@@ -59,6 +60,14 @@ export class PeticionesService {
 
   public eliminarSkill(objeto:BigInteger): Observable<any>{
     return this.httpClient.delete<any>(this.url_base+"/skill/"+objeto,{ headers: this.reqHeader });
+  }
+
+  public nuevoProyecto(objeto:Proyecto): Observable<any>{
+    return this.httpClient.post<any>(this.url_base+"/proyecto", {"titulo": objeto.titulo, "subtitulo":objeto.subtitulo, "url_imagen":objeto.url_imagen, "url":objeto.url},{ headers: this.reqHeader });
+  }
+
+  public eliminarProyecto(objeto:BigInteger): Observable<any>{
+    return this.httpClient.delete<any>(this.url_base+"/proyecto/"+objeto,{ headers: this.reqHeader });
   }
   
 

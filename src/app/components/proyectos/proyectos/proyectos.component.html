@@ -6,7 +6,7 @@
   
     <div *ngFor="let item of valores" class="col-md-3">
       <div class="card">
-        <img src="{{item.url_imagen}}" class="card-img-top" alt="Fissure in Sandstone"/>
+        <img src="{{item.url_imagen}}" class="card-img-top" alt="Imagen proyecto"/>
         <div class="card-body">
           <h5 class="card-title">{{item.titulo}}</h5>
           <p class="card-text">{{item.subtitulo}}</p>
@@ -15,12 +15,44 @@
               <a href="{{item.url}}" class="btn btn-primary">Ver</a>
             </div>
             <div *ngIf="IsLogged" class="col-md-2">
-              <button type="button" class="btn btn-danger me-5" data-bs-toggle="modal">Eliminar</button>
+              <button (click)="quitar(item.id)" *ngIf="IsLogged" type="button" class="btn btn-danger me-5">Eliminar</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   
+  </div>
+</div>
+
+<div *ngIf="IsLogged" class="d-flex justify-content-center col mt-3">
+  <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModal6label">Agregar Soft Skill</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form (ngSubmit)="agregar()" novalidate>
+              <div class="modal-body">
+                  <label class="form-label" for="texto">Titulo</label>
+                  <input type="text" class="form-control" [(ngModel)]="titulo" id="titulo" name="titulo" placeholder="Titulo...">
+                  <label class="form-label" for="texto">Subtitulo</label>
+                  <input type="text" class="form-control" [(ngModel)]="subtitulo" id="subtitulo" name="subtitulo" placeholder="Subtitulo...">
+                  <label class="form-label" for="texto">Url Imagen</label>
+                  <input type="text" class="form-control" [(ngModel)]="url_imagen" id="url_imagen" name="url_imagen" placeholder="Url Imagen...">
+                  <label class="form-label" for="texto">Url redirigir</label>
+                  <input type="text" class="form-control" [(ngModel)]="url" id="url" name="url" placeholder="Url...">
+                  <div *ngIf="errorMensaje">
+                      <div class="text-center text-danger mb-3">{{errorMensaje}}</div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+              <button type="button" id="exampleModal6_cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+          </form>
+      </div>
+      </div>
   </div>
 </div>
