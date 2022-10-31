@@ -5,12 +5,11 @@
                 <h1 class="display-1 fs-bold lh-lg text-light">Sobre mi</h1>
                 <div class="card" style="background-color: #B3A389;">
                     <div class="card-body text-light">
-                        <h6 class="card-subtitle mb-2 text-light">Card subtitle</h6>
                         <p class="card-text">{{acerca_de.acerca}}</p>
                     </div>
                 </div>
-                <div class="col mt-3">
-                    <button type="button" class="btn btn-outline-warning me-5 rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo"><i class="bi bi-pencil"></i></button>
+                <div *ngIf="IsLogged" class="col mt-3">
+                    <button type="button" (click)="abrirModal()" class="btn btn-outline-warning me-5 rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo"><i class="bi bi-pencil"></i></button>
                     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -18,24 +17,29 @@
                             <h5 class="modal-title" id="exampleModalLabel2">Editar</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <form>
-                            <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Sobre Mi:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
+                        <form (ngSubmit)="actualizarAcerca()" novalidate>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Sobre Mi:</label>
+                                    <textarea class="form-control" [(ngModel)]="texto" id="texto" name="texto"></textarea>
+                                    <label for="message-text" class="col-form-label">URL Imagen:</label>
+                                    <input type="text" class="form-control" [(ngModel)]="url_persona" id="url_persona" name="url_persona" placeholder="URL Imagen...">
+                                    <div *ngIf="errorMensaje">
+                                        <div class="text-center text-danger mb-3">{{errorMensaje}}</div>
+                                    </div>
+                                </div>
                             </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Confirmar</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="button" id="Modal_exampleModal2_cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Confirmar</button>
+                            </div>
+                        </form>
                         </div>
                     </div>
                     </div>
                 </div>
             </div>
-            <div class="col text-align-center" style="background-image: url(/assets/img/img1.png)">
+            <div class="col text-align-center" style="background-image: url({{acerca_de.url_imagen}})">
             </div>
         </div>
     </div>

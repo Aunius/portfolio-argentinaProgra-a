@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/model/proyecto';
 import { InicioService } from 'src/app/service/inicio.service';
+import { PeticionesService } from 'src/app/service/peticiones.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -10,10 +12,12 @@ import { InicioService } from 'src/app/service/inicio.service';
 export class ProyectosComponent implements OnInit {
 
   valores: Proyecto[] = [new Proyecto(-1,"No se ha podido cargar la información", "No se ha podido cargar la información","","")];
+  IsLogged!: Boolean;
 
-  constructor(public inicioService: InicioService) { }
+  constructor(public inicioService: InicioService, public peticionesService: PeticionesService, public tokenService:TokenService) { }
 
   ngOnInit(): void {
+    this.IsLogged = this.tokenService.getToken()?true:false;
     this.inicioService.proyectos().subscribe(data => {
       this.valores = [];
       data.proyectos.forEach((element: any) => {

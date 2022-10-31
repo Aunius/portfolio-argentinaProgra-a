@@ -1,11 +1,11 @@
 <div class="container-fluid" style="background-color: #234e70;">
     <div class="row pt-5">
-        <h1 class="display-1 mt-5">Hard Skills</h1>
+        <h1 class="display-1 mt-5">Hard Skills <button *ngIf="IsLogged" type="button" class="btn btn-success me-5 rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModalhard"><i class="bi bi-plus"></i></button> </h1>
         <div class="col mb-4">
             <div class="card mb-5" style="background-color:#faf8bf;">
                 <div class="row pt-5">
                     <div *ngFor="let item of hard" class="col-6 mb-4">
-                        <h3>{{item.texto}}</h3>
+                        <h3>{{item.texto}} <button *ngIf="IsLogged" type="button" class="btn btn-danger me-5" data-bs-toggle="modal">Eliminar</button></h3>
                         <div class="progress mb-5">
                             <div class="progress-bar" role="progressbar" style="width: {{item.valor}}%;" aria-valuemin="0" aria-valuemax="100">{{item.valor}}%</div>
                         </div>
@@ -19,12 +19,12 @@
 
 <div class="container-fluid" style="background-color: #234e70;">
     <div class="row pt-5">
-        <h1 class="display-1 mt-5">Soft Skills</h1>
+        <h1 class="display-1 mt-5">Soft Skills <button *ngIf="IsLogged" type="button" class="btn btn-success me-5 rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModalsoft"><i class="bi bi-plus"></i></button> </h1>
         <div class="col mb-4">
             <div class="card mb-5" style="background-color:#faf8bf;">
                 <div class="row pt-5">
                     <div *ngFor="let item of soft" class="col-6 mb-4">
-                        <h3>{{item.texto}}</h3>
+                        <h3>{{item.texto}} <button *ngIf="IsLogged" type="button" class="btn btn-danger me-5" data-bs-toggle="modal">Eliminar</button></h3>
                         <div class="progress mb-5">
                             <div class="progress-bar" role="progressbar" style="width: {{item.valor}}%;" aria-valuemin="0" aria-valuemax="100">{{item.valor}}%</div>
                         </div>
@@ -32,6 +32,62 @@
                 </div>
             </div>
             <button type="button" class="btn btn-outline-warning me-5" ><i class="bi bi-pencil"></i></button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="IsLogged" class="d-flex justify-content-center col mt-3">
+    <div class="modal fade" id="exampleModalsoft" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalsoftlabel">Agregar Soft Skill</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form (ngSubmit)="agregarSoft()" novalidate>
+                <div class="modal-body">
+                    <label class="form-label" for="texto">Nombre</label>
+                    <input type="text" class="form-control" [(ngModel)]="texto" id="texto" name="texto" placeholder="Nombre...">
+                    <label class="form-label" for="valor">Valor</label>
+                    <input type="number" min="0" max="100" step="1" class="form-control" [(ngModel)]="valor" id="valor" name="valor" placeholder="porcentaje...">
+                    <div *ngIf="errorMensaje">
+                        <div class="text-center text-danger mb-3">{{errorMensaje}}</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" id="exampleModalsoft_cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="IsLogged" class="d-flex justify-content-center col mt-3">
+    <div class="modal fade" id="exampleModalhard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalhardlabel">Agregar Hard Skill</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form (ngSubmit)="agregarHard()" novalidate>
+                <div class="modal-body">
+                    <label class="form-label" for="texto">Nombre</label>
+                    <input type="text" class="form-control" [(ngModel)]="texto" id="texto" name="texto" placeholder="Nombre...">
+                    <label class="form-label" for="valor">Valor</label>
+                    <input type="number" min="0" max="100" step="1" class="form-control" [(ngModel)]="valor" id="valor" name="valor" placeholder="porcentaje...">
+                    <div *ngIf="errorMensaje">
+                        <div class="text-center text-danger mb-3">{{errorMensaje}}</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" id="exampleModalhard_cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
         </div>
     </div>
 </div>

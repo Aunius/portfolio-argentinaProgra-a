@@ -2,7 +2,7 @@
     <div class="container-fluid" style="background-color:#234e70;">
         <div class="row pt-5">
             <div class="col">
-                <h1 class="display-1 fs-bold lh-lg text-light">Experiencia laboral</h1>
+                <h1 class="display-1 fs-bold lh-lg text-light">Experiencia laboral <button *ngIf="IsLogged" type="button" class="btn btn-success me-5 rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal4"><i class="bi bi-plus"></i></button></h1>
 
                 <div *ngFor="let item of valores" class="row justify-content-center">
                     <div class="col-md-6">
@@ -17,12 +17,14 @@
                                     </div>
                                 </div>                            
                             </div>
+                            <div *ngIf="IsLogged" class="d-flex justify-content-center">
+                                <button type="button" (click)="quitar(item.id)" class="btn btn-danger me-5">Eliminar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-warning me-5 rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal4"><i class="bi bi-pencil"></i></button>
+                <div *ngIf="IsLogged" class="d-flex justify-content-center">
                     <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content">
@@ -30,15 +32,21 @@
                             <h5 class="modal-title" id="exampleModalLabel4">Agregar Trabajo</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <label for="message-text" class="col-form-label">Agregar descripcion</label>
-                                <textarea class="form-control" id="message-text"></textarea>
-                                <input class="form-control " type="file" id="formFile" data-bs-dismiss="modal">
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar.</button>
-                            <button type="button" class="btn btn-primary">Guardar.</button>
-                            </div>
+                            <form (ngSubmit)="agregar()" novalidate>
+                                <div class="modal-body">
+                                    <label for="message-text" class="col-form-label">Descripcion:</label>
+                                    <textarea class="form-control" [(ngModel)]="texto" id="texto" name="texto"></textarea>
+                                    <label for="message-text" class="col-form-label">URL Imagen:</label>
+                                    <input type="text" class="form-control" [(ngModel)]="url_imagen" id="url_imagen" name="url_imagen" placeholder="URL Imagen...">
+                                    <div *ngIf="errorMensaje">
+                                        <div class="text-center text-danger mb-3">{{errorMensaje}}</div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="Modal_exampleModal3_cerrar" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </form>
                         </div>
                         </div>
                     </div>
@@ -47,3 +55,4 @@
             </div>
         </div>
     </div>
+<!--</div>-->

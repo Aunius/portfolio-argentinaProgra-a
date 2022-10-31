@@ -1,6 +1,6 @@
 <div class="container-fluid" style="background-color: #faf8bf;">
   <div class="row">
-    <h1 class="display-1 fs-bold lh-lg text-dark">Proyectos</h1>
+    <h1 class="display-1 fs-bold lh-lg text-dark">Proyectos <button *ngIf="IsLogged" type="button" class="btn btn-success me-5 rounded-circle" data-bs-toggle="modal" data-bs-target="#exampleModal6"><i class="bi bi-plus"></i></button></h1>
   </div>
   <div class="row p-5 pb-5" style="background-color:#faf8bf;">
   
@@ -14,9 +14,9 @@
             <div class="col-md-2">
               <a href="{{item.url}}" class="btn btn-primary">Ver</a>
             </div>
-            <!-- <div class="col-md-2">
-              <a href="{{item.url}}" class="btn btn-primary">Ver</a>
-            </div> -->
+            <div *ngIf="IsLogged" class="col-md-2">
+              <button type="button" class="btn btn-danger me-5" data-bs-toggle="modal">Eliminar</button>
+            </div>
           </div>
         </div>
       </div>
