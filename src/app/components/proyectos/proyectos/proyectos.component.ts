@@ -38,7 +38,7 @@ export class ProyectosComponent implements OnInit {
   }
 
   agregar(): void{
-    this.peticionesService.nuevoProyecto(new Proyecto(0,this.titulo,this.subtitulo,this.url_imagen,this.url)).subscribe(res => {
+    this.peticionesService.nuevoProyecto(new Proyecto(0,this.titulo,this.subtitulo,this.url,this.url_imagen)).subscribe(res => {
         if(res){
           this.ngOnInit();
           (<HTMLInputElement>document.getElementById("exampleModal6_cerrar")).click();

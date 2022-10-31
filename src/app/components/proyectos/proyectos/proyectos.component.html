@@ -12,7 +12,7 @@
           <p class="card-text">{{item.subtitulo}}</p>
           <div class="row justify-content-center">
             <div class="col-md-2">
-              <a href="{{item.url}}" class="btn btn-primary">Ver</a>
+              <a href="{{item.url}}" target="_blank" class="btn btn-primary">Ver</a>
             </div>
             <div *ngIf="IsLogged" class="col-md-2">
               <button (click)="quitar(item.id)" *ngIf="IsLogged" type="button" class="btn btn-danger me-5">Eliminar</button>
