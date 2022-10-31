@@ -59,14 +59,13 @@ export class ContactoComponent implements OnInit {
     let contacto = new Contacto(this.contactoForm.value.nombre, this.contactoForm.value.email, this.contactoForm.value.mensaje);
 
     this.contactoService.contacto(contacto).subscribe(res => {
+        if(res.mensaje?? null){
+          this.mensaje_exito = '';
+          this.contactoForm.reset();
+        }
       },
       err => {
-          if(err.status == 200){
-            this.mensaje_exito = '';
-            this.contactoForm.reset();
-          }else{
-            this.mensaje_error = '';
-          }
+        this.mensaje_error = '';
       });
   }
 
