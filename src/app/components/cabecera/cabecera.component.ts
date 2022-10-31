@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona';
-import { PersonaService } from 'src/app/service/persona.service';
+import { Cabecera } from 'src/app/model/cabecera';
+import { InicioService } from 'src/app/service/inicio.service';
 
 @Component({
   selector: 'app-cabecera',
@@ -8,12 +8,14 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent implements OnInit {
-  persona: persona = new persona("","","");
+  cabecera: Cabecera = new Cabecera("No se ha podido cargar la información","No se ha podido cargar la información","/assets/img/img1.png");
   
-  constructor(public personaService: PersonaService) { }
+  constructor(public inicioService: InicioService) { }
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
+    this.inicioService.cabecera().subscribe(data => {
+      this.cabecera = new Cabecera(data.persona,data.saludo,data.url_persona);
+    })
   }
 
 }

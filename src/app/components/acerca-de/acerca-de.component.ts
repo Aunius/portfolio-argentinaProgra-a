@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InicioService } from 'src/app/service/inicio.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercaDeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private inicioService: InicioService) { }
 
   ngOnInit(): void {
+    this.inicioService.cabecera().subscribe(data => {
+      console.log(data)
+    })
   }
 
 }
