@@ -21,4 +21,20 @@ export class InicioService {
   public acerca_de(): Observable<any>{
     return this.httpClient.get<any>(this.url_base+"acerca_de");
   }
+
+  public educacion(): Observable<any>{
+    return this.httpClient.get<any>(this.url_base+"educacion");
+  }
+
+  public experiencia(): Observable<any>{
+    return this.httpClient.get<any>(this.url_base+"experiencia");
+  }
+
+  public skills(): Observable<any>{
+    return this.httpClient.get<any>(this.url_base+"skills");
+  }
+
+  public proyectos(): Observable<any>{
+    return this.httpClient.get<any>(this.url_base+"proyectos");
+  }
 }

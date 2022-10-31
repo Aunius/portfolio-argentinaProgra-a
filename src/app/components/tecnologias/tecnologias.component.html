@@ -3,34 +3,13 @@
         <h1 class="display-1 mt-5">Hard Skills</h1>
         <div class="col mb-4">
             <div class="card mb-5" style="background-color:#faf8bf;">
-                <h3>Hard Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <h3>Hard Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <h3>Hard Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-            </div>
-            <button type="button" class="btn btn-outline-warning me-5" ><i class="bi bi-pencil"></i></button>
-        </div>
-        <div class="col mb-4">
-            <div class="card mb-5" style="background-color:#faf8bf;">
-                <h3>Hard Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <h3>Hard Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <h3>Hard Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div class="row pt-5">
+                    <div *ngFor="let item of hard" class="col-6 mb-4">
+                        <h3>{{item.texto}}</h3>
+                        <div class="progress mb-5">
+                            <div class="progress-bar" role="progressbar" style="width: {{item.valor}}%;" aria-valuemin="0" aria-valuemax="100">{{item.valor}}%</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button type="button" class="btn btn-outline-warning me-5" ><i class="bi bi-pencil"></i></button>
@@ -39,38 +18,17 @@
 </div>
 
 <div class="container-fluid" style="background-color: #234e70;">
-    <h1 class="display-1">Soft Skills</h1>
-    <div class="row">
-        <div class="col">
+    <div class="row pt-5">
+        <h1 class="display-1 mt-5">Soft Skills</h1>
+        <div class="col mb-4">
             <div class="card mb-5" style="background-color:#faf8bf;">
-                <h3>Soft Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <h3>Soft Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <h3>Soft Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-            </div>
-            <button type="button" class="btn btn-outline-warning me-5" ><i class="bi bi-pencil"></i></button>
-        </div>
-        <div class="col mb-5">
-            <div class="card mb-5" style="background-color:#faf8bf;">
-                <h3>Soft Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <h3>Soft Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-                <h3>Soft Skill</h3>
-                <div class="progress mb-5">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div class="row pt-5">
+                    <div *ngFor="let item of soft" class="col-6 mb-4">
+                        <h3>{{item.texto}}</h3>
+                        <div class="progress mb-5">
+                            <div class="progress-bar" role="progressbar" style="width: {{item.valor}}%;" aria-valuemin="0" aria-valuemax="100">{{item.valor}}%</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button type="button" class="btn btn-outline-warning me-5" ><i class="bi bi-pencil"></i></button>

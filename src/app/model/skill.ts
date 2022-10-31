@@ -1,10 +1,13 @@
 export class Skill {
-    id?: number;
-    nombre: string;
-    porcentaje: number;
+    id: number;
+    texto: string;
+    tipo: string;
+    valor: number;
 
-    constructor(nombre:string, porcentaje:number){
-        this.nombre = nombre;
-        this.porcentaje = porcentaje;
+    constructor(id: number, texto:string, tipo:string, valor:number,){
+        this.id = id;
+        this.texto = texto;
+        this.tipo = tipo;
+        this.valor = valor;
     }
 }
