@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUsername';
+const NOMBRE_KEY = 'AuthNOMBRE';
+const APELLIDO_KEY = 'AuthAPELLIDO';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +30,24 @@ export class TokenService {
 
   public getuserName():string {
     return sessionStorage.getItem(USERNAME_KEY)!;
+  }
+
+  public setNombre(Nombre:string):void{
+    window.sessionStorage.removeItem(NOMBRE_KEY);
+    window.sessionStorage.setItem(NOMBRE_KEY, Nombre);
+  }
+
+  public getNombre():string {
+    return sessionStorage.getItem(NOMBRE_KEY)!;
+  }
+
+  public setApellido(userName:string):void{
+    window.sessionStorage.removeItem(APELLIDO_KEY);
+    window.sessionStorage.setItem(APELLIDO_KEY, userName);
+  }
+
+  public getApellido():string {
+    return sessionStorage.getItem(APELLIDO_KEY)!;
   }
 
   public logOut(): void{

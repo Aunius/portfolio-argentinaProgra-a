@@ -9,16 +9,16 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class MenusComponent implements OnInit {
 
-  IsLogged = false;
+  nombre!: String;
+  apellido!: String;
+  IsLogged!: String;
 
   constructor(private router:Router, private tokenService:TokenService) { }
 
   ngOnInit(): void {
-    if (this.tokenService.getToken()) {
-      this.IsLogged = true;
-    } else{
-      this.IsLogged = false;
-    }
+    this.nombre = this.tokenService.getNombre();
+    this.apellido = this.tokenService.getApellido();
+    this.IsLogged = this.tokenService.getToken();
   }
 
   onLogOut():void{
