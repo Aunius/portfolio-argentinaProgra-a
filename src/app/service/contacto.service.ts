@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contacto } from '../model/contacto';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactoService {
 
-  url_base = 'https://backend-portfolioargentinaprog.herokuapp.com/contacto'
+  url_base = environment.apiURL+'/contacto'
 
   constructor(private httpClient: HttpClient) { }
 
