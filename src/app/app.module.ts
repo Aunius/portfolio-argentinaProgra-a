@@ -17,6 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 /* import { interceptorProvider } from './service/interceptor-service'; */
 
 @NgModule({
@@ -40,6 +42,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     FontAwesomeModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     /* interceptorProvider */
