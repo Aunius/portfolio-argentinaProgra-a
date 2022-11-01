@@ -37,14 +37,12 @@ export class AcercaDeComponent implements OnInit {
 
   actualizarAcerca(): void{
     this.peticionesService.actualizarAcercaDe(new AcercaDe(this.texto,this.url_persona)).subscribe(res => {
-      console.log(res)
         if(res.mensaje?? null){
           this.ngOnInit();
           (<HTMLInputElement>document.getElementById("Modal_exampleModal2_cerrar")).click();
         }
       },
       err => {
-        console.log(err)
         this.errorMensaje = 'Ha ocurrido un error, reintente nuevamente mas tarde';
       });
   }
